@@ -12,7 +12,7 @@
 <GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
         <Label text="Uzorak: " />
-        <TextField fx:id="unos" maxWidth="-Infinity" GridPane.halignment="CENTER" />
+        <TextField fx:id="unos" maxWidth="130.0" GridPane.halignment="CENTER" />
         <Button fx:id="trazi" onAction="#pretraga" text="Traži" GridPane.halignment="RIGHT" />
         <ListView fx:id="lista" maxHeight="-Infinity" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <GridPane.margin>
