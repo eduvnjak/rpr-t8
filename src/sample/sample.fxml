@@ -9,18 +9,22 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" prefHeight="400.0" prefWidth="300.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
-        <Label text="Uzorak: " />
-        <TextField fx:id="unos" maxWidth="130.0" GridPane.halignment="CENTER" />
-        <Button fx:id="trazi" onAction="#pretraga" text="Traži" GridPane.halignment="RIGHT" />
-        <ListView fx:id="lista" maxHeight="-Infinity" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+        <Label prefHeight="17.0" prefWidth="43.0" text="Uzorak: " GridPane.halignment="CENTER" />
+        <TextField fx:id="unos" maxWidth="130.0" GridPane.columnIndex="1" />
+        <Button fx:id="trazi" onAction="#pretraga" text="Traži" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+        <Button fx:id="prekini" onAction="#zaustaviPretragu" text="Prekini" GridPane.columnIndex="3" disable="true"/>
+        <ListView fx:id="lista" maxHeight="-Infinity" prefHeight="355.0" prefWidth="270.0" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <GridPane.margin>
-            <Insets bottom="10.0" />
+            <Insets bottom="10.0" left="10.0" right="10.0" />
          </GridPane.margin></ListView>
     </children>
    <columnConstraints>
-      <ColumnConstraints />
+      <ColumnConstraints maxWidth="61.0" minWidth="41.0" prefWidth="59.0" />
+      <ColumnConstraints maxWidth="137.0" minWidth="103.0" prefWidth="103.0" />
+      <ColumnConstraints maxWidth="86.0" minWidth="10.0" prefWidth="49.0" />
+      <ColumnConstraints maxWidth="70.0" minWidth="10.0" prefWidth="59.0" />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints />

@@ -16,6 +16,7 @@ public class Controller {
     public TextField unos;
     public Button trazi;
     public ListView<String> lista;
+    public Button prekini;
     private boolean zaustavi;
     private List listaDatoteka = new LinkedList<String>();
     public String uzorak;
@@ -24,7 +25,11 @@ public class Controller {
         //File sadrzaj[] = folder.listFiles();
         if(folder.listFiles() != null) {
             for (File sadrzaj : folder.listFiles()) {
-                //if (zaustavi) break;
+                if (zaustavi){
+                    trazi.setDisable(false);
+                    prekini.setDisable(true);
+                    break;
+                }
                 ///File nesto = new File(sadrzaj[i]);
                 //System.out.println(sadrzaj[i]);
                 if (sadrzaj.isFile()) {
@@ -51,8 +56,10 @@ public class Controller {
             /*for (int i = 0; i < roots.length ; i++) {
                 pretraziFolder(roots[i], listaDatoteka, uzorak);
             }*/
+            zaustavi = false;
+            prekini.setDisable(false);
             new Thread(() -> {
-                pretraziFolder(new File("//home"), uzorak);
+                pretraziFolder(new File("D:\\Users\\Eman"), uzorak);
                 Platform.runLater(() ->{
                     trazi.setDisable(true);
                 });
@@ -63,5 +70,7 @@ public class Controller {
     }
 
     public void zaustaviPretragu(ActionEvent actionEvent) {
+        zaustavi = true;
+        trazi.setDisable(false);
     }
 }
